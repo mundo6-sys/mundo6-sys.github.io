@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SK-Flow Cables - Premium Electrical & Data Solutions</title>
+    <style>
+        :root {
+            --primary-color: #003366; /* Deep Corporate Blue */
+            --secondary-color: #f0ad4e; /* Warm Gold/Yellow */
+            --bg-color: #f8f9fa;
+            --text-color: #343a40;
+            --light-gray: #e9ecef;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: var(--white);
+            padding: 1rem 0;
+            border-bottom: 2px solid var(--light-gray);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--secondary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('https://via.placeholder.com/1500x800.png?text=Factory+Background') no-repeat center center/cover;
+            color: var(--white);
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: auto;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 0.9rem 2rem;
+            margin-top: 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: background-color 0.3s, transform 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background-color: #e69500;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        #about p {
+            font-size: 1.1rem;
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid var(--light-gray);
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-card-content {
+            padding: 1.5rem;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+        }
+
+        .product-card h3 {
+            margin-top: 0;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+        }
+
+        .low-fidelity-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+        
+        .low-fidelity-gallery div {
+            background: var(--white);
+            padding: 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+        }
+
+        .low-fidelity-gallery img {
+            width: 100%;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .low-fidelity-gallery p {
+            color: #666;
+            font-style: italic;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info strong {
+            color: var(--primary-color);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">SK-Flow Cables</div>
+            <nav>
+                <a href="#about">About Us</a>
+                <a href="#products">Products</a>
+                <a href="#low-fidelity">Low-Fidelity Process</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Engineered for Excellence, Built to Last</h1>
+            <p>SK-Flow Cables delivers superior electrical and data transmission solutions for today's most demanding industries.</p>
+            <a href="#products" class="btn">Discover Our Solutions</a>
+        </section>
+
+        <section id="about" class="container">
+            <h2 class="section-title">Who We Are</h2>
+            <p>
+                <strong>SK-Flow Cables</strong> is a premier manufacturer and supplier of high-performance cables, established to meet the growing demands for reliability and safety in the digital age. Our journey began with a simple mission: to engineer connectivity solutions that don't just meet standards, but set new benchmarks for quality.
+            </p>
+            <p>
+                Our state-of-the-art manufacturing facility employs rigorous quality control protocols at every stage of production. From sourcing raw materials to final product testing, we ensure every cable leaving our factory is robust, efficient, and fully compliant with international safety certifications. We believe a strong connection is the backbone of any great project, and we are here to power yours.
+            </p>
+        </section>
+
+        <section id="products" style="background-color: var(--white);">
+            <div class="container">
+                <h2 class="section-title">Our Core Products</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="https://media.istockphoto.com/id/937114374/photo/electrician-technician-at-work-with-safety-equipment-on-a-residential-electrical-system.jpg?s=1024x1024&w=is&k=20&c=DS9NKNVFwRFNb-zt6Ard84Cy-UmOAHzGxd4CbDWdQpM=" alt="Power Cables">
+                        <div class="product-card-content">
+                            <h3>Armoured Power Cables</h3>
+                            <p>Engineered for maximum protection and durability in harsh industrial environments. Ensures uninterrupted power flow.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://media.istockphoto.com/id/174949974/photo/fixing-cable-tv.jpg?s=1024x1024&w=is&k=20&c=I9AoYlz8Z7WPH30S7m6Nv-vY_ToS0ibDk50Lfc9j_Wc=" alt="Coaxial Cables">
+                        <div class="product-card-content">
+                            <h3>RG-6 Coaxial Cables</h3>
+                            <p>High-bandwidth coaxial cables for flawless video and data transmission in telecommunications and broadcast.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Fiber Optic Cables">
+                        <div class="product-card-content">
+                            <h3>Multi-Mode Fiber Optic</h3>
+                            <p>Next-generation fiber optic solutions for ultra-high-speed data centers and long-distance network backbones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="low-fidelity" class="container">
+            <h2 class="section-title">Low-Fidelity Process</h2>
+            <p style="text-align:center; margin-bottom: 2rem;">Every professional website begins with a plan. Here are the initial hand-drawn sketches that formed the foundation for this site's structure and user flow.</p>
+            <div class="low-fidelity-gallery">
+                <div>
+                    <img src="3rd.jpg" alt="Low fidelity drawing of the homepage layout">
+                    <p>Homepage Hero Section Sketch</p>
+                </div>
+                <div>
+                    <img src="second.jpg" alt="Low fidelity drawing of the product page">
+                    <p>Product Card Layout Concept</p>
+                </div>
+                <div>
+                    <img src="first.jpg" alt="Low fidelity wireframe for mobile view">
+                    <p>Mobile Navigation Wireframe</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" style="background-color: var(--white);">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-section">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p>Our team is ready to assist you with product inquiries, technical specifications, and bulk order quotations. Contact us today to discuss your project needs.</p>
+                        <p><strong>Email:</strong> <a href="mailto:help@skflowcables.com">help@skflowcables.com</a></p>
+                        <p><strong>Phone:</strong> +233 (55) 033-7367</p>
+                        <p><strong>Address:</strong> Lakeside Estate, Accra, Ghana</p>
+                    </div>
+                    <div class="contact-form-placeholder">
+                        <h3>Send Us a Message</h3>
+                        <form onsubmit="event.preventDefault(); alert('This is a demo form.');">
+                            <input type="text" placeholder="Your Name" required style="width: 100%; padding: 10px; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px;">
+                            <input type="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px;">
+                            <textarea placeholder="Your Message" required rows="5" style="width: 100%; padding: 10px; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                            <button type="submit" class="btn" style="background-color: var(--primary-color); color: var(--white);">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SK-Flow Cables. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

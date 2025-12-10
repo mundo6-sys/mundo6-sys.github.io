@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberLync Solutions - A 5-Page Project</title>
+    <style>
+        :root { --primary: #007bff; --dark: #1a253c; --light: #f8f9fa; --text: #333; }
+        body { font-family: Arial, sans-serif; margin: 0; background: var(--light); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1100px; margin: auto; padding: 0 1rem; }
+        header { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        .nav-links a { margin-left: 1.5rem; text-decoration: none; color: var(--text); font-weight: 500; cursor: pointer; }
+        .page-header, .hero { background: var(--dark); color: #fff; padding: 5rem 0; text-align: center; }
+        .hero h1, .page-header h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .btn { background: var(--primary); color: #fff; padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; border: none; cursor: pointer; }
+        .section { padding: 3rem 0; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: var(--dark); }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: center; }
+        .card { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+        .about-content { max-width: 800px; margin: auto; text-align: center; }
+        .service-item, .blog-post { background: #fff; padding: 2rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px; }
+        footer { background: var(--dark); color: #fff; text-align: center; padding: 2rem 0; margin-top: 2rem; }
+        .page { display: none; } /* Hide all pages by default */
+        .page.active { display: block; } /* Show the active page */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">CyberLync</div>
+                <div class="nav-links">
+                    <a data-page="home">Home</a>
+                    <a data-page="about">About</a>
+                    <a data-page="services">Services</a>
+                    <a data-page="blog">Blog</a>
+                    <a data-page="contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Page Content -->
+    <main id="home" class="page active">
+        <section class="hero">
+            <div class="container">
+                <h1>Securing Your Digital Frontier</h1>
+                <p>Proactive cybersecurity solutions tailored for the modern enterprise.</p>
+                <a data-page="services" class="btn nav-link" style="margin-top: 1rem;">Explore Our Services</a>
+            </div>
+        </section>
+        <section class="section container">
+            <h2 class="section-title">Our Core Services</h2>
+            <div class="grid-3">
+                <div class="card"><h3>Penetration Testing</h3><p>Identify and mitigate vulnerabilities before attackers can exploit them.</p></div>
+                <div class="card"><h3>Threat Monitoring</h3><p>24/7 network surveillance to detect and respond to threats in real-time.</p></div>
+                <div class="card"><h3>Security Audits</h3><p>Comprehensive compliance and infrastructure assessments to fortify your defenses.</p></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- About Page Content -->
+    <main id="about" class="page">
+        <section class="page-header"><h1>About CyberLync Solutions</h1></section>
+        <section class="section container">
+            <div class="about-content">
+                <h2>Our Mission</h2>
+                <p>Our mission is to provide businesses with the robust security posture they need to operate with confidence in an increasingly complex digital world.</p>
+                <h2>Our Story</h2>
+                <p>Founded by veteran security analysts, CyberLync was built to address the gap between automated tools and real-world tactics used by attackers.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Services Page Content -->
+    <main id="services" class="page">
+        <section class="page-header"><h1>Our Services</h1></section>
+        <section class="section container">
+            <div class="service-item"><h3>Penetration Testing & Vulnerability Assessment</h3><p>Our ethical hackers simulate real-world attacks on your network, applications, and infrastructure to uncover critical vulnerabilities.</p></div>
+            <div class="service-item"><h3>24/7 Managed Threat Detection & Response</h3><p>We provide around-the-clock monitoring of your digital environment to detect suspicious activity and respond to incidents before they cause damage.</p></div>
+            <div class="service-item"><h3>Compliance & Security Audits</h3><p>Navigate complex regulatory landscapes like GDPR and HIPAA. We assess your posture and provide a clear roadmap to achieve compliance.</p></div>
+        </section>
+    </main>
+
+    <!-- Blog Page Content -->
+    <main id="blog" class="page">
+        <section class="page-header"><h1>Latest Insights</h1></section>
+        <section class="section container">
+            <div class="blog-post"><h3>The Rise of AI in Phishing Attacks</h3><p>Attackers are now leveraging AI to create highly convincing phishing emails that bypass traditional filters...</p><a href="#" class="btn">Read More</a></div>
+            <div class="blog-post"><h3>Securing Your Remote Workforce</h3><p>With remote work as the new normal, the network perimeter has dissolved. Learn the essential steps to secure your distributed team...</p><a href="#" class="btn">Read More</a></div>
+        </section>
+    </main>
+
+    <!-- Contact Page Content -->
+    <main id="contact" class="page">
+        <section class="page-header"><h1>Contact Us</h1></section>
+        <section class="section container">
+            <div class="contact-grid">
+                <div><h3>Get in Touch</h3><p><strong>Email:</strong> help@skcyberlync.com</p><p><strong>Phone:</strong> +233 (24) 923-2767</p></div>
+                <div><h3>Send a Message</h3><form onsubmit="event.preventDefault(); alert('Thank you!');"><input type="text" placeholder="Name" required><input type="email" placeholder="Email" required><textarea rows="5" placeholder="Message" required></textarea><button type="submit" class="btn">Submit</button></form></div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 CyberLync Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pages = document.querySelectorAll('.page');
+            const navLinks = document.querySelectorAll('.nav-links a, .nav-link');
+
+            function showPage(pageId) {
+                // Hide all pages
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+
+                // Show the requested page
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                }
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    showPage(pageId);
+                });
+            });
+
+            // Initially show the home page
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
